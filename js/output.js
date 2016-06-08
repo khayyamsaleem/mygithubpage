@@ -12,7 +12,7 @@ var out = "This is my {{title}}. Today is {{date}}. My name is {{name}}. I am a 
 
 var output = Mustache.render(out, view);
 
-var outObj = document.getElementById("output");
+var outObj = document.getElementById("output")[0];
 outObj.innerHTML = output;
 outObj.style.text-align = "center";
 outObj.style.color = "red";
