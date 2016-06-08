@@ -14,4 +14,3 @@ var output = Mustache.render(out, view);
 
 var outObj = document.getElementById("output")[0];
 outObj.innerHTML = output;
-outObj.style.color = "red";
