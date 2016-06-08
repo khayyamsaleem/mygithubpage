@@ -1,10 +1,15 @@
 var view = {
-    title: "Khayyam",
-    calc: function () {
-        return 2 + 4;
-    }
+    title: "Portfolio",
+    date: function () {
+        var today = new Date();
+        return "<p>" + today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear() + "</p>";
+        },
+    name: "Khayyam Saleem",
+    occupation: "developer"
 };
 
-var output = Mustache.render("{{title}} spends {{calc}}", view);
+var out = "This is my {{title}}. Today is {{date}}. My name is {{name}}. I am a {{occupation}}.";
+
+var output = Mustache.render(out, view);
 
 document.getElementById("output").innerHTML = output;
