@@ -2,7 +2,7 @@ var view = {
     title: "Portfolio",
     date: function () {
         var today = new Date();
-        return today.getMonth() + 1 + "/" + today.getDate() + "/" + today.getFullYear()";
+        return today.getMonth() + 1 + "/" + today.getDate() + "/" + today.getFullYear();
         },
     name: "Khayyam Saleem",
     occupation: "developer"
