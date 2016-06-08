@@ -7,4 +7,4 @@ var view = {
 
 var output = Mustache.render("{{title}} spends {{calc}}", view);
 
-document.getElementByID("container").innerHTL = output;
+document.getElementById("container").innerHTL = output;
