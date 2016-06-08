@@ -12,5 +12,6 @@ var out = "This is my {{title}}. Today is {{date}}. My name is {{name}}. I am a 
 
 var output = Mustache.render(out, view);
 
-var outObj = document.getElementById("output")[0];
-outObj.innerHTML = output;
+document.getElementById("output").innerHTML = output;
+document.getElementById("output").style.color = "red"; 
+document.getElementById("output").style.textAlign = "left";
