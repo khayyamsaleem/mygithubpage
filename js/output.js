@@ -14,5 +14,4 @@ var output = Mustache.render(out, view);
 
 var outObj = document.getElementById("output")[0];
 outObj.innerHTML = output;
-outObj.style.text-align = "center";
 outObj.style.color = "red";
