@@ -10,9 +10,9 @@ var html = Mustache.to_html(template, person);
 $('#test').html(html);
 
 $( "form" ).submit(function( event ) {
-    if ( $( "input:#m" ).val() === "12" && 
-         $( "input:#d" ).val() === "12" &&
-         $( "input:#y" ).val() === "1997" ) {
+    if ( $( "input:first" ).val() === "12" && 
+         $( "input:second" ).val() === "12" &&
+         $( "input:third" ).val() === "1997" ) {
          $ ( "bday" ).text("That is your birthday!").show();
          return;
     }
