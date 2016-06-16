@@ -8,7 +8,7 @@ var view = {
     occupation: "developer"
 };
 
-var out = "<div>My name is {{name}}.</div><div>I am a {{occupation}}</div><div>This is my {{title}}.</div><div>Today is {{date}}.</div>";
+var out = "<div>My name is {{name}}.</div><div>I am a {{occupation}}.</div><div>This is my {{title}}.</div><div>Today is {{date}}.</div>";
 
 var output = Mustache.render(out, view);
 
