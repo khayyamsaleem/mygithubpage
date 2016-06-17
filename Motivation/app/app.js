@@ -36,9 +36,9 @@ App.fn.submit = function(e){
   e.preventDefault();
 
   var input = this.$$('input')[0];
-  if ( !input.valueAsDate ) return;
+  if ( !input.getDate()) return;
 
-  this.dob = input.valueAsDate;
+  this.dob = input.getDate();
   this.save();
   this.renderAgeLoop();
 };
