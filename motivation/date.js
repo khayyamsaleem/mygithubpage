@@ -16,7 +16,7 @@ $(document).ready(function(){
 			e.preventDefault();
 			localStorage['dob'] = new Date($('#datepicker').value);
 			$('form').fadeOut('fast');
-			$('body').append("div id='age'></div>");
+			$('body').append("<div id='age'></div>");
 			setInterval(ageCalc, 80);
 		});
 	};
