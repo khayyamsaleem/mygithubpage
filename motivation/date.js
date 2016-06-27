@@ -14,7 +14,7 @@ $(document).ready(function(){
 		$('footer').html("<input type='date' id='datepicker' name='age' /> <button id='button'>Motivate</button>");
 		$('#button').click(function(e){
 			e.preventDefault();
-			localStorage['dob'] = new Date($('#datepicker').value);
+			localStorage['dob'] = document.getElementById('datepicker').value;
 			$('form').fadeOut('fast');
 			$('body').append("<div id='age'></div>");
 			setInterval(ageCalc, 80);
