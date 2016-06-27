@@ -18,7 +18,7 @@ $(document).ready(function(){
 			$('form').fadeOut('fast');
 			$('body').append("div id='age'></div>");
 			setInterval(ageCalc, 80);
-		)};
+		});
 	};
 	if (typeof localStorage['dob'] != "undefined"){
 		$('form').remove();
