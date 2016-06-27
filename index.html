@@ -1,38 +1,27 @@
-
 <!DOCTYPE html>
-<html lang=en>
-<head>
-  <meta charset="utf-8">
-  <title>Khayyam Saleem</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-  <style>
-    .brand-logo { margin-left: 20px; }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Khayyam Saleem</a>
-      </div>
-    </nav>
-  </header>
-  <div class="container">
-    <div class="row">
-      <div class="card">
-        <div class="card-content">
-          <a class="btn waves-effect waves-ripple" href="resume.pdf">R&eacute;sum&eacute;</a>
-          <a class="btn waves-effect waves-ripple" href="https://github.com/khayyamsaleem">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="output"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-
-  <script src="/js/node_modules/mustache/mustache.js"></script>
-  <script src="/js/output.js"></script>
-</body>
+<html>
+    <head>
+        <title>Motivation</title>
+        <link rel="stylesheet" href="node_modules/pikaday/css/pikaday.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="mustache"></div>
+        <form>
+            <h1 class="age-label">When were you born?</h1>
+            <footer>
+                <input type="text" id="datepicker" name="age"/>
+                <button id="button">Motivate</button>
+            </footer>
+        </form>
+    </body>
+    <scripts>
+        <script src="node_modules/mustache/mustache.js"></script>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/pikaday/pikaday.js"></script>
+        <script>
+            var picker = new Pikaday({ field: $('#datepicker')[0] });
+        </script>
+        <script src="date.js"></script>
+    </scripts>
 </html>
