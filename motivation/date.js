@@ -5,7 +5,6 @@ var ageCalc = function() {
 //	var duration = today - birthday;
 //	var age = duration / 31556900000;
 	var age = (new Date() - new Date(localStorage.dob)) / 31556900000;
-	console.log(age);
 	$('#age').html('<h2>' + age.toFixed(15) + '</h2>');
 };
 
@@ -20,8 +19,7 @@ $(document).ready(function(){
 			$('body').append("<div id='age'></div>");
 			setInterval(ageCalc, 80);
 		});
-	};
-	if (typeof localStorage['dob'] != "undefined"){
+	} else if (typeof localStorage['dob'] != "undefined"){
 		$('form').remove();
 		$('body').append("<div id='age'></div>");
 		setInterval(ageCalc, 80);
