@@ -4,7 +4,8 @@ var ageCalc = function() {
 //	var today = new Date();
 //	var duration = today - birthday;
 //	var age = duration / 31556900000;
-	var age = (new Date() - new Date(localStorage['dob'])) / 31556900000
+	var age = (new Date() - new Date(localStorage.dob)) / 31556900000;
+	console.log(age);
 	$('#age').html('<h2>' + age.toFixed(15) + '</h2>');
 };
 
@@ -14,7 +15,7 @@ $(document).ready(function(){
 		$('footer').html("<input type='date' id='datepicker' name='age' /> <button id='button'>Motivate</button>");
 		$('#button').click(function(e){
 			e.preventDefault();
-			localStorage['dob'] = document.getElementById('datepicker').value;
+			localStorage.dob = document.getElementById('datepicker').value;
 			$('form').fadeOut('fast');
 			$('body').append("<div id='age'></div>");
 			setInterval(ageCalc, 80);
