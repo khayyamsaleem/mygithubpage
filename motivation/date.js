@@ -32,5 +32,5 @@ $(document).ready(function(){
 			$('body').append("<div id='age'></div>");
 			setInterval(ageCalc, 80);
 		});
-	}
+	};
 });
