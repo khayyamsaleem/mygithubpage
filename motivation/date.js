@@ -1,9 +1,10 @@
 
 var ageCalc = function() {
-	var birthday = new Date(localStorage['dob']);
-	var today = new Date();
-	var duration = today - birthday;
-	var age = duration / 31556900000;
+//	var birthday = new Date(localStorage['dob']);
+//	var today = new Date();
+//	var duration = today - birthday;
+//	var age = duration / 31556900000;
+	var age = (new Date() - new Date(localStorage['dob'])) / 31556900000
 	$('#age').html('<h2>' + age.toFixed(15) + '</h2>');
 	console.log(age);
 };
