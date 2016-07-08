@@ -9,8 +9,8 @@ var ageCalc = function() {
 };
 
 $(document).ready(function(){
-	if (((navigator.userAgent.toLowerCase().indexOf('webkit') > 0)  || 
-			 (navigator.userAgent.toLowerCase().indexOf('mobi')   > 0)) && 
+	if (((navigator.userAgent.toLowerCase().indexOf('chrome') > 0)  || 
+			 (navigator.userAgent.toLowerCase().indexOf('mobi')   > 0) || (navigator.userAgent.toLowerCase().indexOf('opera') > 0)) && 
 		   (typeof localStorage['dob'] == 'undefined') ){
 		$('#pikaday').remove();
 		$('footer').html("<input type='date' id='datepicker' name='age' /> <button id='button'>Motivate</button>");
