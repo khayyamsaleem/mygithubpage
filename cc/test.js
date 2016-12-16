@@ -22,6 +22,8 @@ var Jason = {
 var team = [Chav, Charlie, Jason];
 
 for (var i in team) {
+    $(team[i].selector).append("<p>" + team[i].firstName +" " 
+            +team[i].lastName + "</p><p>" + team[i].description + "</p>");
     $(team[i].selector).on("click", function() {
         $(this).fadeOut("slow");
         console.log($(this) + " clicked!");
