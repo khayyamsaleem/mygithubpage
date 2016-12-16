@@ -22,7 +22,7 @@ var Jason = {
 var team = [Chav, Charlie, Jason];
 
 for (var i of team) {
-    $(i.selector).on("click", () => {
+    $(i.selector).on("click", function() {
         $(this).fadeOut("slow");
     });
 }
