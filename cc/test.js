@@ -24,6 +24,6 @@ var team = [Chav, Charlie, Jason];
 for (var i in team) {
     $(team[i].selector).on("click", function() {
         console.log("clicked");
-        //this.fadeOut("slow");
+        this.fadeOut("slow");
     });
 }
