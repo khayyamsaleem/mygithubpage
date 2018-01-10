@@ -12238,7 +12238,7 @@ Enter a desired strength: 500
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#WARNING: THIS TAKES A LONG-ISH TIME</span>
@@ -12256,7 +12256,8 @@ Enter a desired strength: 500
 <span class="s2">                        on substr(FORMULARY_DATA.FORMULARY_ID,4) = (PLAN_INFO.FORMULARY_ID) </span><span class="se">\</span>
 <span class="s2">         join RXCUI_DATA on FORMULARY_DATA.RXCUI = RXCUI_DATA.RXCUI </span><span class="se">\</span>
 <span class="s2">         join BENEFICIARY_COST on PLAN_INFO.CONTRACT_ID = BENEFICIARY_COST.CONTRACT_ID and </span><span class="se">\</span>
-<span class="s2">                                  PLAN_INFO.PLAN_ID = BENEFICIARY_COST.PLAN_ID </span><span class="se">\</span>
+<span class="s2">                                  PLAN_INFO.PLAN_ID = BENEFICIARY_COST.PLAN_ID and </span><span class="se">\</span>
+<span class="s2">                                  cast(FORMULARY_DATA.TIER_LEVEL_VALUE as integer) = cast(BENEFICIARY_COST.TIER as integer) </span><span class="se">\</span>
 <span class="s2">         where PLAN_INFO.PDP_REGION_CODE is &#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">user_pdp_region_code</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&#39; and </span><span class="se">\</span>
 <span class="s2">               PLAN_INFO.CONTRACT_ID like &#39;S%&#39; and </span><span class="se">\</span>
 <span class="s2">               upper(RXCUI_DATA.FULL_GENERIC_NAME) like &#39;%&quot;</span><span class="o">+</span><span class="n">drug</span><span class="o">+</span><span class="s2">&quot;%&#39; and </span><span class="se">\</span>
@@ -12275,7 +12276,7 @@ Enter a desired strength: 500
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">user_generics</span><span class="p">:</span>
@@ -12345,124 +12346,124 @@ Enter a desired strength: 500
       <td>0.0</td>
       <td>1.0</td>
       <td>1</td>
-      <td>6.0</td>
+      <td>10.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>1</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18039</td>
+      <td>18040</td>
       <td>866436</td>
-      <td>2</td>
+      <td>1</td>
       <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
+      <td>S5921</td>
+      <td>349</td>
+      <td>33.2</td>
+      <td>405.0</td>
       <td>1.0</td>
       <td>1</td>
-      <td>10.0</td>
+      <td>1.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>2</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18039</td>
+      <td>18041</td>
       <td>866436</td>
-      <td>2</td>
+      <td>1</td>
       <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
+      <td>S0522</td>
+      <td>4</td>
+      <td>30.4</td>
+      <td>405.0</td>
       <td>1.0</td>
       <td>1</td>
-      <td>37.0</td>
+      <td>1.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>3</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18040</td>
+      <td>18043</td>
       <td>866436</td>
       <td>1</td>
       <td>N</td>
       <td>S5921</td>
-      <td>349</td>
-      <td>33.2</td>
+      <td>386</td>
+      <td>26.8</td>
       <td>405.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>1</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>4</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18040</td>
+      <td>18043</td>
       <td>866436</td>
       <td>1</td>
       <td>N</td>
       <td>S5921</td>
-      <td>349</td>
-      <td>33.2</td>
+      <td>386</td>
+      <td>26.8</td>
       <td>405.0</td>
       <td>1.0</td>
       <td>1</td>
-      <td>6.0</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>5</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18040</td>
+      <td>18056</td>
       <td>866436</td>
-      <td>1</td>
+      <td>2</td>
       <td>N</td>
-      <td>S5921</td>
-      <td>349</td>
-      <td>33.2</td>
-      <td>405.0</td>
-      <td>1.0</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
+      <td>0.0</td>
       <td>1</td>
-      <td>30.0</td>
+      <td>2.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>6</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18041</td>
+      <td>18056</td>
       <td>866436</td>
-      <td>1</td>
+      <td>2</td>
       <td>N</td>
-      <td>S0522</td>
-      <td>4</td>
-      <td>30.4</td>
-      <td>405.0</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
       <td>1.0</td>
       <td>1</td>
-      <td>1.0</td>
+      <td>2.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>7</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18041</td>
+      <td>18057</td>
       <td>866436</td>
-      <td>1</td>
+      <td>2</td>
       <td>N</td>
-      <td>S0522</td>
-      <td>4</td>
-      <td>30.4</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
       <td>405.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>1</td>
       <td>3.0</td>
       <td>1.0</td>
@@ -12471,2217 +12472,77 @@ Enter a desired strength: 500
     <tr>
       <th>8</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18041</td>
+      <td>18057</td>
       <td>866436</td>
-      <td>1</td>
+      <td>2</td>
       <td>N</td>
-      <td>S0522</td>
-      <td>4</td>
-      <td>30.4</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
       <td>405.0</td>
       <td>1.0</td>
       <td>1</td>
-      <td>35.0</td>
+      <td>3.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>9</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18043</td>
+      <td>18059</td>
       <td>866436</td>
-      <td>1</td>
+      <td>2</td>
       <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
-      <td>405.0</td>
+      <td>S5768</td>
+      <td>127</td>
+      <td>56.2</td>
       <td>0.0</td>
+      <td>1.0</td>
       <td>1</td>
-      <td>0.0</td>
+      <td>2.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>10</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18043</td>
+      <td>18082</td>
       <td>866436</td>
       <td>1</td>
       <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
+      <td>S5617</td>
+      <td>18</td>
+      <td>74.8</td>
       <td>405.0</td>
-      <td>0.0</td>
+      <td>1.0</td>
       <td>1</td>
-      <td>6.0</td>
+      <td>1.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>11</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18043</td>
+      <td>18083</td>
       <td>866436</td>
       <td>1</td>
       <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
-      <td>405.0</td>
+      <td>S5617</td>
+      <td>249</td>
+      <td>52.9</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>1</td>
-      <td>0.0</td>
+      <td>4.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>12</th>
       <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18043</td>
-      <td>866436</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18043</td>
-      <td>866436</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>31.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18056</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18056</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18056</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18056</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18056</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>30.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>47.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18059</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18059</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18059</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>47.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18082</td>
-      <td>866436</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5617</td>
-      <td>18</td>
-      <td>74.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18082</td>
-      <td>866436</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5617</td>
-      <td>18</td>
-      <td>74.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18082</td>
-      <td>866436</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5617</td>
-      <td>18</td>
-      <td>74.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>30.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>53</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18255</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18255</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>55</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18255</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>56</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18255</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18256</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18256</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>59</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18256</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>42.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18364</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S7694</td>
-      <td>4</td>
-      <td>51.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>61</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18364</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S7694</td>
-      <td>4</td>
-      <td>51.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>62</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18419</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>8</td>
-      <td>34.3</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>63</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18419</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>8</td>
-      <td>34.3</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>14.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18419</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>8</td>
-      <td>34.3</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>43.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18420</td>
-      <td>866436</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>9</td>
-      <td>84.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>66</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18420</td>
-      <td>866436</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>9</td>
-      <td>84.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>67</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18420</td>
-      <td>866436</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>9</td>
-      <td>84.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>35.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>68</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18439</td>
-      <td>866436</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>101</td>
-      <td>79.5</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18439</td>
-      <td>866436</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>101</td>
-      <td>79.5</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>70</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18439</td>
-      <td>866436</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>101</td>
-      <td>79.5</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>36.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>71</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18443</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>72</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18443</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>73</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18443</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>74</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18443</td>
-      <td>866436</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>37.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>75</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866438</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866438</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>77</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866438</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>78</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866438</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18057</td>
-      <td>866438</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>47.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18059</td>
-      <td>866438</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>81</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18059</td>
-      <td>866438</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>82</th>
-      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
-      <td>18059</td>
-      <td>866438</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>47.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-<p>83 rows × 14 columns</p>
-</div>
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>FULL_GENERIC_NAME</th>
-      <th>FORMULARY_ID</th>
-      <th>RXCUI</th>
-      <th>TIER_LEVEL_VALUE</th>
-      <th>PRIOR_AUTHORIZATION_YN</th>
-      <th>CONTRACT_ID</th>
-      <th>PLAN_ID</th>
-      <th>PREMIUM</th>
-      <th>DEDUCTIBLE</th>
-      <th>COVERAGE_LEVEL</th>
-      <th>DAYS_SUPPLY</th>
-      <th>COST_AMT_PREF</th>
-      <th>COST_TYPE_PREF</th>
-      <th>PDP_REGION_CODE</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18039</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18039</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18039</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>37.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18040</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>349</td>
-      <td>33.2</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18040</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>349</td>
-      <td>33.2</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18040</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>349</td>
-      <td>33.2</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>30.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18041</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S0522</td>
-      <td>4</td>
-      <td>30.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18041</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S0522</td>
-      <td>4</td>
-      <td>30.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18041</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S0522</td>
-      <td>4</td>
-      <td>30.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>35.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18043</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18043</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18043</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18043</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18043</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>386</td>
-      <td>26.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>31.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18056</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18056</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18056</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18056</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18056</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>30.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>47.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18059</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18059</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18059</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>47.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18082</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5617</td>
-      <td>18</td>
-      <td>74.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18082</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5617</td>
-      <td>18</td>
-      <td>74.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18082</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5617</td>
-      <td>18</td>
-      <td>74.8</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>30.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>53</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18255</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18255</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>55</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18255</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>56</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18255</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18256</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18256</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>59</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18256</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>42.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18364</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S7694</td>
-      <td>4</td>
-      <td>51.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>61</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18364</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S7694</td>
-      <td>4</td>
-      <td>51.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>62</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18419</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>8</td>
-      <td>34.3</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>63</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18419</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>8</td>
-      <td>34.3</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>14.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18419</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>8</td>
-      <td>34.3</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>43.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18420</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>9</td>
-      <td>84.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>66</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18420</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>9</td>
-      <td>84.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>67</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18420</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>9</td>
-      <td>84.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>35.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>68</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18439</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>101</td>
-      <td>79.5</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18439</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>101</td>
-      <td>79.5</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>70</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18439</td>
-      <td>197320</td>
-      <td>2</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>101</td>
-      <td>79.5</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>36.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>71</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18443</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>72</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18443</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>73</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18443</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>74</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18443</td>
-      <td>197320</td>
-      <td>1</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>37.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>75</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>213998</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>213998</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>77</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>213998</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>78</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>213998</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18057</td>
-      <td>213998</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>278</td>
-      <td>19.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>47.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18059</td>
-      <td>213998</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>81</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18059</td>
-      <td>213998</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>82</th>
-      <td>Allopurinol 300 MG Oral Tablet</td>
-      <td>18059</td>
-      <td>213998</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5768</td>
-      <td>127</td>
-      <td>56.2</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>47.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-<p>83 rows × 14 columns</p>
-</div>
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>FULL_GENERIC_NAME</th>
-      <th>FORMULARY_ID</th>
-      <th>RXCUI</th>
-      <th>TIER_LEVEL_VALUE</th>
-      <th>PRIOR_AUTHORIZATION_YN</th>
-      <th>CONTRACT_ID</th>
-      <th>PLAN_ID</th>
-      <th>PREMIUM</th>
-      <th>DEDUCTIBLE</th>
-      <th>COVERAGE_LEVEL</th>
-      <th>DAYS_SUPPLY</th>
-      <th>COST_AMT_PREF</th>
-      <th>COST_TYPE_PREF</th>
-      <th>PDP_REGION_CODE</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18039</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18039</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18039</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>37.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18040</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>349</td>
-      <td>33.2</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18040</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>349</td>
-      <td>33.2</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18040</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5921</td>
-      <td>349</td>
-      <td>33.2</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>30.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18041</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S0522</td>
-      <td>4</td>
-      <td>30.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18041</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S0522</td>
-      <td>4</td>
-      <td>30.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18041</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S0522</td>
-      <td>4</td>
-      <td>30.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>35.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
       <td>18130</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5993</td>
-      <td>1</td>
-      <td>47.7</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18130</td>
-      <td>1043582</td>
-      <td>3</td>
+      <td>866436</td>
+      <td>2</td>
       <td>N</td>
       <td>S5993</td>
       <td>1</td>
@@ -14694,7 +12555,904 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
+      <th>13</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18131</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5993</td>
+      <td>3</td>
+      <td>99.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18152</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>220</td>
+      <td>22.6</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18152</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>220</td>
+      <td>22.6</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18154</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>106</td>
+      <td>34.0</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18155</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>207</td>
+      <td>91.7</td>
+      <td>350.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18155</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>207</td>
+      <td>91.7</td>
+      <td>350.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18254</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5884</td>
+      <td>131</td>
+      <td>37.0</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18255</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5884</td>
+      <td>150</td>
+      <td>20.4</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18255</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5884</td>
+      <td>150</td>
+      <td>20.4</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18256</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5884</td>
+      <td>62</td>
+      <td>77.8</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18364</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S7694</td>
+      <td>4</td>
+      <td>51.0</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18419</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5601</td>
+      <td>8</td>
+      <td>34.3</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>14.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18420</td>
+      <td>866436</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5601</td>
+      <td>9</td>
+      <td>84.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18439</td>
+      <td>866436</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S4802</td>
+      <td>101</td>
+      <td>79.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>36.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>24 HR metoprolol succinate 50 MG Extended Rele...</td>
+      <td>18443</td>
+      <td>866436</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S4802</td>
+      <td>78</td>
+      <td>36.9</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FULL_GENERIC_NAME</th>
+      <th>FORMULARY_ID</th>
+      <th>RXCUI</th>
+      <th>TIER_LEVEL_VALUE</th>
+      <th>PRIOR_AUTHORIZATION_YN</th>
+      <th>CONTRACT_ID</th>
+      <th>PLAN_ID</th>
+      <th>PREMIUM</th>
+      <th>DEDUCTIBLE</th>
+      <th>COVERAGE_LEVEL</th>
+      <th>DAYS_SUPPLY</th>
+      <th>COST_AMT_PREF</th>
+      <th>COST_TYPE_PREF</th>
+      <th>PDP_REGION_CODE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18039</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5820</td>
+      <td>3</td>
+      <td>86.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18040</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5921</td>
+      <td>349</td>
+      <td>33.2</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18041</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S0522</td>
+      <td>4</td>
+      <td>30.4</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18043</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5921</td>
+      <td>386</td>
+      <td>26.8</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18043</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5921</td>
+      <td>386</td>
+      <td>26.8</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18056</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18056</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18057</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18057</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18059</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5768</td>
+      <td>127</td>
+      <td>56.2</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18082</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>18</td>
+      <td>74.8</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
       <th>11</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18083</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>249</td>
+      <td>52.9</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18130</td>
+      <td>197320</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5993</td>
+      <td>1</td>
+      <td>47.7</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18131</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5993</td>
+      <td>3</td>
+      <td>99.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18152</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>220</td>
+      <td>22.6</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18152</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>220</td>
+      <td>22.6</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18154</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>106</td>
+      <td>34.0</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18155</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>207</td>
+      <td>91.7</td>
+      <td>350.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18155</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>207</td>
+      <td>91.7</td>
+      <td>350.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18254</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5884</td>
+      <td>131</td>
+      <td>37.0</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18255</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5884</td>
+      <td>150</td>
+      <td>20.4</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18255</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5884</td>
+      <td>150</td>
+      <td>20.4</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18256</td>
+      <td>197320</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5884</td>
+      <td>62</td>
+      <td>77.8</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18364</td>
+      <td>197320</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S7694</td>
+      <td>4</td>
+      <td>51.0</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18419</td>
+      <td>197320</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5601</td>
+      <td>8</td>
+      <td>34.3</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>14.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18420</td>
+      <td>197320</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5601</td>
+      <td>9</td>
+      <td>84.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18439</td>
+      <td>197320</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S4802</td>
+      <td>101</td>
+      <td>79.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18443</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S4802</td>
+      <td>78</td>
+      <td>36.9</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Allopurinol 300 MG Oral Tablet</td>
+      <td>18443</td>
+      <td>197320</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S4802</td>
+      <td>78</td>
+      <td>36.9</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FULL_GENERIC_NAME</th>
+      <th>FORMULARY_ID</th>
+      <th>RXCUI</th>
+      <th>TIER_LEVEL_VALUE</th>
+      <th>PRIOR_AUTHORIZATION_YN</th>
+      <th>CONTRACT_ID</th>
+      <th>PLAN_ID</th>
+      <th>PREMIUM</th>
+      <th>DEDUCTIBLE</th>
+      <th>COVERAGE_LEVEL</th>
+      <th>DAYS_SUPPLY</th>
+      <th>COST_AMT_PREF</th>
+      <th>COST_TYPE_PREF</th>
+      <th>PDP_REGION_CODE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
+      <td>18039</td>
+      <td>1043582</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5820</td>
+      <td>3</td>
+      <td>86.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>37.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
+      <td>18040</td>
+      <td>1043582</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5921</td>
+      <td>349</td>
+      <td>33.2</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
+      <td>18041</td>
+      <td>1043582</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S0522</td>
+      <td>4</td>
+      <td>30.4</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
       <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
       <td>18130</td>
       <td>1043582</td>
@@ -14711,41 +13469,7 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
-      <th>12</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18131</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5993</td>
-      <td>3</td>
-      <td>99.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18131</td>
-      <td>1043582</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5993</td>
-      <td>3</td>
-      <td>99.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>8.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>14</th>
+      <th>4</th>
       <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
       <td>18131</td>
       <td>1043582</td>
@@ -14762,147 +13486,181 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
+      <th>5</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18039</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5820</td>
+      <td>3</td>
+      <td>86.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>37.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18056</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18057</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>47.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18059</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5768</td>
+      <td>127</td>
+      <td>56.2</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>47.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18082</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>18</td>
+      <td>74.8</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18083</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>249</td>
+      <td>52.9</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>42.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18130</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5993</td>
+      <td>1</td>
+      <td>47.7</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>34.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18131</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5993</td>
+      <td>3</td>
+      <td>99.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>32.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18154</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>106</td>
+      <td>34.0</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>18.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18155</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>207</td>
+      <td>91.7</td>
+      <td>350.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>42.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
       <th>15</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18254</td>
-      <td>1043582</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>131</td>
-      <td>37.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18254</td>
-      <td>1043582</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>131</td>
-      <td>37.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18255</td>
-      <td>1043582</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18255</td>
-      <td>1043582</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18255</td>
-      <td>1043582</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18255</td>
-      <td>1043582</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
       <td>18256</td>
-      <td>1043582</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18256</td>
-      <td>1043582</td>
-      <td>4</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>24 HR Metformin hydrochloride 500 MG / saxagli...</td>
-      <td>18256</td>
-      <td>1043582</td>
-      <td>4</td>
+      <td>1243848</td>
+      <td>3</td>
       <td>N</td>
       <td>S5884</td>
       <td>62</td>
@@ -14915,11 +13673,181 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
-      <th>24</th>
+      <th>16</th>
       <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
-      <td>18039</td>
+      <td>18419</td>
       <td>1243848</td>
       <td>3</td>
+      <td>N</td>
+      <td>S5601</td>
+      <td>8</td>
+      <td>34.3</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>43.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18420</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5601</td>
+      <td>9</td>
+      <td>84.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>35.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18439</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S4802</td>
+      <td>101</td>
+      <td>79.5</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>36.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
+      <td>18443</td>
+      <td>1243848</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S4802</td>
+      <td>78</td>
+      <td>36.9</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>37.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Modified 24 HR Metformin hydrochloride 500 MG ...</td>
+      <td>18152</td>
+      <td>1807915</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>220</td>
+      <td>22.6</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Modified 24 HR Metformin hydrochloride 500 MG ...</td>
+      <td>18152</td>
+      <td>1807915</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>220</td>
+      <td>22.6</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Osmotic 24 HR Metformin hydrochloride 500 MG E...</td>
+      <td>18082</td>
+      <td>1807917</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>18</td>
+      <td>74.8</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Osmotic 24 HR Metformin hydrochloride 500 MG E...</td>
+      <td>18083</td>
+      <td>1807917</td>
+      <td>1</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>249</td>
+      <td>52.9</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Osmotic 24 HR Metformin hydrochloride 500 MG E...</td>
+      <td>18152</td>
+      <td>1807917</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>220</td>
+      <td>22.6</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Osmotic 24 HR Metformin hydrochloride 500 MG E...</td>
+      <td>18152</td>
+      <td>1807917</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5660</td>
+      <td>220</td>
+      <td>22.6</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>24 HR Metformin hydrochloride 500 MG Extended ...</td>
+      <td>18039</td>
+      <td>860975</td>
+      <td>1</td>
       <td>N</td>
       <td>S5820</td>
       <td>3</td>
@@ -14932,51 +13860,17 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
-      <th>25</th>
-      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
-      <td>18039</td>
-      <td>1243848</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
-      <td>18039</td>
-      <td>1243848</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5820</td>
-      <td>3</td>
-      <td>86.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>37.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
       <th>27</th>
-      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
-      <td>18056</td>
-      <td>1243848</td>
-      <td>3</td>
+      <td>24 HR Metformin hydrochloride 500 MG Extended ...</td>
+      <td>18040</td>
+      <td>860975</td>
+      <td>1</td>
       <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>0.0</td>
+      <td>S5921</td>
+      <td>349</td>
+      <td>33.2</td>
+      <td>405.0</td>
+      <td>1.0</td>
       <td>1</td>
       <td>1.0</td>
       <td>1.0</td>
@@ -14984,35 +13878,35 @@ Enter a desired strength: 500
     </tr>
     <tr>
       <th>28</th>
-      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
-      <td>18056</td>
-      <td>1243848</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>0.0</td>
+      <td>24 HR Metformin hydrochloride 500 MG Extended ...</td>
+      <td>18041</td>
+      <td>860975</td>
       <td>1</td>
-      <td>2.0</td>
+      <td>N</td>
+      <td>S0522</td>
+      <td>4</td>
+      <td>30.4</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
     <tr>
       <th>29</th>
-      <td>24 HR Metformin hydrochloride 500 MG / sitagli...</td>
-      <td>18056</td>
-      <td>1243848</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5810</td>
-      <td>38</td>
-      <td>34.9</td>
-      <td>325.0</td>
-      <td>1.0</td>
+      <td>24 HR Metformin hydrochloride 500 MG Extended ...</td>
+      <td>18043</td>
+      <td>860975</td>
       <td>1</td>
-      <td>1.0</td>
+      <td>N</td>
+      <td>S5921</td>
+      <td>386</td>
+      <td>26.8</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0.0</td>
       <td>1.0</td>
       <td>4</td>
     </tr>
@@ -15034,7 +13928,398 @@ Enter a desired strength: 500
       <td>...</td>
     </tr>
     <tr>
-      <th>465</th>
+      <th>89</th>
+      <td>Metformin hydrochloride 500 MG / pioglitazone ...</td>
+      <td>18057</td>
+      <td>861783</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>47.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>Metformin hydrochloride 500 MG / pioglitazone ...</td>
+      <td>18059</td>
+      <td>861783</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5768</td>
+      <td>127</td>
+      <td>56.2</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>47.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>Metformin hydrochloride 500 MG / pioglitazone ...</td>
+      <td>18082</td>
+      <td>861783</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>18</td>
+      <td>74.8</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>Metformin hydrochloride 500 MG / pioglitazone ...</td>
+      <td>18083</td>
+      <td>861783</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>249</td>
+      <td>52.9</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>10.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>Metformin hydrochloride 500 MG / pioglitazone ...</td>
+      <td>18131</td>
+      <td>861783</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5993</td>
+      <td>3</td>
+      <td>99.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 1...</td>
+      <td>18056</td>
+      <td>861787</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 1...</td>
+      <td>18056</td>
+      <td>861787</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 1...</td>
+      <td>18057</td>
+      <td>861787</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 1...</td>
+      <td>18057</td>
+      <td>861787</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 1...</td>
+      <td>18059</td>
+      <td>861787</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5768</td>
+      <td>127</td>
+      <td>56.2</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 2...</td>
+      <td>18056</td>
+      <td>861790</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 2...</td>
+      <td>18056</td>
+      <td>861790</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 2...</td>
+      <td>18057</td>
+      <td>861790</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
+      <td>405.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 2...</td>
+      <td>18057</td>
+      <td>861790</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Metformin hydrochloride 500 MG / repaglinide 2...</td>
+      <td>18059</td>
+      <td>861790</td>
+      <td>2</td>
+      <td>N</td>
+      <td>S5768</td>
+      <td>127</td>
+      <td>56.2</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
+      <td>18039</td>
+      <td>861821</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5820</td>
+      <td>3</td>
+      <td>86.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>37.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
+      <td>18056</td>
+      <td>861821</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>38</td>
+      <td>34.9</td>
+      <td>325.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
+      <td>18057</td>
+      <td>861821</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5810</td>
+      <td>278</td>
+      <td>19.7</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>47.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
+      <td>18059</td>
+      <td>861821</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5768</td>
+      <td>127</td>
+      <td>56.2</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>47.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
+      <td>18082</td>
+      <td>861821</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>18</td>
+      <td>74.8</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
+      <td>18083</td>
+      <td>861821</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5617</td>
+      <td>249</td>
+      <td>52.9</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>42.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
+      <td>18130</td>
+      <td>861821</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5993</td>
+      <td>1</td>
+      <td>47.7</td>
+      <td>405.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>34.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
+      <td>18131</td>
+      <td>861821</td>
+      <td>3</td>
+      <td>N</td>
+      <td>S5993</td>
+      <td>3</td>
+      <td>99.6</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>32.0</td>
+      <td>1.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>112</th>
       <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
       <td>18154</td>
       <td>861821</td>
@@ -15051,75 +14336,7 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
-      <th>466</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18155</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5660</td>
-      <td>207</td>
-      <td>91.7</td>
-      <td>350.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>467</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18155</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5660</td>
-      <td>207</td>
-      <td>91.7</td>
-      <td>350.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>468</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18155</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5660</td>
-      <td>207</td>
-      <td>91.7</td>
-      <td>350.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>469</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18155</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5660</td>
-      <td>207</td>
-      <td>91.7</td>
-      <td>350.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>470</th>
+      <th>113</th>
       <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
       <td>18155</td>
       <td>861821</td>
@@ -15136,143 +14353,7 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
-      <th>471</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18254</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>131</td>
-      <td>37.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>472</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18254</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>131</td>
-      <td>37.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>473</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18255</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>474</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18255</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>475</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18255</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>476</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18255</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>150</td>
-      <td>20.4</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>477</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18256</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>478</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18256</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5884</td>
-      <td>62</td>
-      <td>77.8</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>479</th>
+      <th>114</th>
       <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
       <td>18256</td>
       <td>861821</td>
@@ -15289,75 +14370,7 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
-      <th>480</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18364</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S7694</td>
-      <td>4</td>
-      <td>51.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>481</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18364</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S7694</td>
-      <td>4</td>
-      <td>51.0</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>482</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18419</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>8</td>
-      <td>34.3</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>483</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18419</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>8</td>
-      <td>34.3</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>14.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>484</th>
+      <th>115</th>
       <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
       <td>18419</td>
       <td>861821</td>
@@ -15374,41 +14387,7 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
-      <th>485</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18420</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>9</td>
-      <td>84.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>486</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18420</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S5601</td>
-      <td>9</td>
-      <td>84.6</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>487</th>
+      <th>116</th>
       <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
       <td>18420</td>
       <td>861821</td>
@@ -15425,41 +14404,7 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
-      <th>488</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18439</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>101</td>
-      <td>79.5</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>489</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18439</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>101</td>
-      <td>79.5</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>490</th>
+      <th>117</th>
       <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
       <td>18439</td>
       <td>861821</td>
@@ -15476,58 +14421,7 @@ Enter a desired strength: 500
       <td>4</td>
     </tr>
     <tr>
-      <th>491</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18443</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>492</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18443</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>493</th>
-      <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
-      <td>18443</td>
-      <td>861821</td>
-      <td>3</td>
-      <td>N</td>
-      <td>S4802</td>
-      <td>78</td>
-      <td>36.9</td>
-      <td>405.0</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>494</th>
+      <th>118</th>
       <td>Metformin hydrochloride 500 MG / sitagliptin 5...</td>
       <td>18443</td>
       <td>861821</td>
@@ -15545,7 +14439,7 @@ Enter a desired strength: 500
     </tr>
   </tbody>
 </table>
-<p>495 rows × 14 columns</p>
+<p>119 rows × 14 columns</p>
 </div>
 </div>
 
